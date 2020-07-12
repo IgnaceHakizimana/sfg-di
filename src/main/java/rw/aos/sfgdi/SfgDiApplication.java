@@ -3,19 +3,20 @@ package rw.aos.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import rw.aos.sfgdi.controllers.ConstructorInjectedController;
-import rw.aos.sfgdi.controllers.MyController;
-import rw.aos.sfgdi.controllers.PropertyInjectedController;
-import rw.aos.sfgdi.controllers.SetterInjectedController;
+import rw.aos.sfgdi.controllers.*;
 
 @SpringBootApplication
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx=SpringApplication.run(SfgDiApplication.class, args);
-		MyController myController=(MyController) ctx.getBean("myController");
+
+		System.out.println("---------Profile");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("---------- Primary Bean");
+		MyController myController=(MyController) ctx.getBean("myController");
 		System.out.println(myController.sayHello());
 
 		System.out.println("------------ Property based DI");
