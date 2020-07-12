@@ -2,9 +2,7 @@ package rw.aos.sfgdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rw.aos.sfgdi.services.GreetingServiceImpl;
-
-import static org.junit.jupiter.api.Assertions.*;
+import rw.aos.sfgdi.services.ConstructorGreetingService;
 
 /**
  * @author : Ignace
@@ -15,7 +13,7 @@ ConstructorInjectedController controller;
 
     @BeforeEach
     void setUp() {
-        controller=new ConstructorInjectedController(new GreetingServiceImpl());
+        controller=new ConstructorInjectedController(new ConstructorGreetingService());
     }
 
     @Test
